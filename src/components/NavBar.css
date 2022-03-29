@@ -1,6 +1,6 @@
 #navBar{
     display: flex;
-    background-color: dimgray;
+    background-color: rgb(77, 85, 112);
     height: 50px;
 }
 #nombre{
@@ -9,8 +9,8 @@
 }
 #botones{
     text-align: right;
-    margin-left: 1100px;
-    background-color: dimgray;
+    margin-left: 1000px;
+    background-color: rgb(77, 85, 112);
     margin-top: 15px;
 }
 a{
@@ -19,6 +19,20 @@ a{
     padding-left: 10px;
 }
 a:hover{
-    text-decoration: underline;
-    background-color: gray;
+    font-size: large;
+    background-color: rgb(50, 64, 110);
+}
+#carritoCompra{
+    width: 15px;
+    height: 15px;
+}
+#cartWidget{
+    width: 45px;
+    height: 45px;
+}
+#cantidad{
+    display: inline-block;
+}
+#catalogo{
+    margin-top: 250px;
 }
