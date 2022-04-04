@@ -36,3 +36,20 @@ a:hover{
 #catalogo{
     margin-top: 250px;
 }
+#cantidad{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#counter{
+    margin-top: 50px;
+}
+#addCarrito{
+    margin-top: 35px;
+    background-color: rgb(77, 85, 112);
+}
+#botonMas{
+    background-color: rgb(77, 85, 112);
+}
+#botonMenos{
+    background-color: rgb(77, 85, 112);
+}
