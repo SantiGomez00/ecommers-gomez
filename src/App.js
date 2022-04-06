@@ -5,14 +5,14 @@ import Contador from './components/ItemCount'
 
 
 function App() {
-  const add = (cantidad) =>{
+  const addCart = (cantidad) =>{
   console.log("se agrego " +cantidad +" al carrito")
 }
   return (
     <div className="App">
       <NavBar></NavBar>
       <ItemListContainer></ItemListContainer>
-      <Contador initial={1}stock={10}add={add}></Contador>
+      <Contador initial={1}stock={10}add={addCart}></Contador>
     </div>
   );
 }

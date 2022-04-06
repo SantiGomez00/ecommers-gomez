@@ -1,8 +1,19 @@
 import "./NavBar.css"
+import ItemList from "./itemList"
+import {useState,useEffect} from "react"
+import { CargarProductos } from "./asyncMock"
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
+    const [productos, setProductos] = useState ([])
+    useEffect (()=>{
+        CargarProductos().then(prods=>{
+            setProductos(prods)
+        }).catch(error=>{console.log("error")})        
+    },[])
     return (
-        <div id = "catalogo">aqui estaran los productos :)</div>
+        <div>
+            <ItemList productos={productos}></ItemList>
+        </div>
     )
 }
 
