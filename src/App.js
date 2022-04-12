@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import Contador from './components/ItemCount'
-
+import ItemDetailContainer  from './components/itemDetailContainer'
 
 function App() {
   const addCart = (cantidad) =>{
@@ -13,6 +13,7 @@ function App() {
       <NavBar></NavBar>
       <ItemListContainer></ItemListContainer>
       <Contador initial={1}stock={10}add={addCart}></Contador>
+      <ItemDetailContainer></ItemDetailContainer>
     </div>
   );
 }

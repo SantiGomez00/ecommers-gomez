@@ -1,10 +1,11 @@
-const Item = ({nombre,img,precio,stock},) => {
+const Item = ({nombre,img},) => {
     return(
         <div>
             <p>{nombre}</p>
             <img src={img} ></img>
-            <p>precio: {precio}</p>
-            <p>stock: {stock}</p> 
+            <p>
+                <button>info</button>
+            </p>
         </div>
     )
 }
