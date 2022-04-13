@@ -1,9 +1,13 @@
-const ItemDetail = ({precio,stock,detalle}) => {
+import './NavBar.css'
+
+const ItemDetail = ({nombre,img,precio,stock,detalle}) => {
     return(
         <div>
-            <p>{precio}</p>
-            <p>{stock}</p>
+            <p id="nombre">{nombre}</p>
+            <img id="imagen" src={img} ></img>
             <p>{detalle}</p>
+            <p>$ {precio}</p>
+            <p>stock: {stock}</p>
         </div>
     )
 }

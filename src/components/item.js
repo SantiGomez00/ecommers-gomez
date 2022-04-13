@@ -1,13 +1,18 @@
-const Item = ({nombre,img},) => {
+import { Link } from "react-router-dom"
+import './NavBar.css'
+
+
+const Item = ({id,nombre,img},) => {
+    console.log(id)
     return(
-        <div>
-            <p>{nombre}</p>
-            <img src={img} ></img>
+        <div id="tarjetaProducto">
+            <p id="nombre">{nombre}</p>
+            <img id="imagen" src={img} ></img>
             <p>
-                <button>info</button>
+                <Link to={`detail/${id}`}>info</Link> 
             </p>
         </div>
     )
 }
-
+  
 export default Item

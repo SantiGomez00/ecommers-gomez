@@ -1,19 +1,23 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import Contador from './components/ItemCount'
-import ItemDetailContainer  from './components/itemDetailContainer'
+import ItemDetailContainer  from './components/itemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const addCart = (cantidad) =>{
-  console.log("se agrego " +cantidad +" al carrito")
-}
   return (
-    <div className="App">
-      <NavBar></NavBar>
-      <ItemListContainer></ItemListContainer>
-      <Contador initial={1}stock={10}add={addCart}></Contador>
-      <ItemDetailContainer></ItemDetailContainer>
+    <div>
+        <div className="App">
+          <BrowserRouter>
+            <NavBar/>
+            <Routes>
+              <Route path="/" element={<ItemListContainer/>} />
+              <Route path="/detail/:productId" element={<ItemDetailContainer/>} />
+              <Route path="/category/:categoryId" element={<ItemListContainer/>} />
+              <Route path="/category/:categoryId/detail/:productId" element={<ItemDetailContainer/>} />
+            </Routes>
+          </BrowserRouter>  
+        </div>
     </div>
   );
 }
