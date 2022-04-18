@@ -3,7 +3,6 @@ import './NavBar.css'
 
 
 const Item = ({id,nombre,img},) => {
-    console.log(id)
     return(
         <div id="tarjetaProducto">
             <p id="nombre">{nombre}</p>
