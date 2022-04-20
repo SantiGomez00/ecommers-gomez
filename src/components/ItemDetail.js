@@ -1,13 +1,16 @@
-import './NavBar.css'
-import Contador from './ItemCount'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import './NavBar.css';
+import Contador from './ItemCount';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import CartContext from './cartContext';
 
 const ItemDetail = ({id,nombre,img,precio,stock,detalle}) => {
-    const [quantity, setQuantity] = useState (0)
+    const {consultarCarrito} = useContext (CartContext)
+    const {addItem} = useContext (CartContext)
     const addCart = (count) => {
         console.log("se agrego al carrito")
-        setQuantity(count)
+        const objetoSeleccionado = {id, precio, nombre, img}
+        addItem ({...objetoSeleccionado, quantity: count})
     }
     return(
         <div>
@@ -15,7 +18,7 @@ const ItemDetail = ({id,nombre,img,precio,stock,detalle}) => {
             <img id="imagen" src={img} ></img>
             <p>{detalle}</p>
             <p>$ {precio}</p>
-            {quantity > 0? <Link to = "/cart">ir al carrito</Link> : <Contador initial ={1} {...id} stock={stock} add ={addCart}></Contador>}
+            {consultarCarrito(id) ? <Link to = "/cart">ir al carrito</Link> : <Contador initial ={1} {...id} stock={stock} add ={addCart}></Contador>}
         </div>
     )
 }
