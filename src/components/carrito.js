@@ -1,10 +1,17 @@
 import CartContext from "./cartContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const Carrito = () => {
     const {carrito} = useContext (CartContext)
     const {eliminarItem} = useContext (CartContext)
     const {vaciarCarrito} = useContext (CartContext)
+
+    let precioFinal = 0
+    
+    carrito.forEach(prod => {
+        precioFinal += prod.precio * prod.quantity        
+    });
  
     return(
         <div>
@@ -22,9 +29,22 @@ const Carrito = () => {
                     </div>
                 </div>
             )}
-            <button onClick={vaciarCarrito}>
-                vaciar carrito
-            </button>
+            {precioFinal === 0? 
+                <div>
+                    <p>
+                        no hay productos en el carrito :c
+                    </p>
+                    <Link to = '/'>
+                        ir a la tienda
+                    </Link>
+                </div>: 
+                <div> 
+                    total: $ {precioFinal}
+                    <button onClick={vaciarCarrito}>
+                        vaciar carrito
+                    </button>
+                </div>
+            } 
         </div>
     )
 }
