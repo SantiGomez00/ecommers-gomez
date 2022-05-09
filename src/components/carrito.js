@@ -8,6 +8,11 @@ const Carrito = () => {
     const {carrito} = useContext (CartContext)
     const {eliminarItem} = useContext (CartContext)
     const {vaciarCarrito} = useContext (CartContext)
+    const [mensaje, setMensaje] = useState("no hay productos, dale")
+    let nombreComprador = 0
+    let email = 0
+    let total = 0
+
 
     const ordenCompra = () => {
         const orden = {
@@ -24,6 +29,9 @@ const Carrito = () => {
         const actualizar = writeBatch(firestoreDb)
         const collectionRef = collection(firestoreDb,"productos")
         const sinStock = []
+    //aca arranca la desgracia
+        const datosCompra = collection(firestoreDb,"orders")
+    //
         getDocs (query(collectionRef,where(documentId(), "in", idProductosComprar))).then(response => {
             response.docs.forEach(doc => {
                 const dataDoc = doc.data()
@@ -37,13 +45,23 @@ const Carrito = () => {
         }).then(() => {
             if(sinStock.length === 0) {
                 const collectionRef = collection (firestoreDb, "orders")
+
                 return addDoc (collectionRef,orden)
             }
             else{
                 return Promise.reject ({name:"stock error", productos: sinStock})
             }
-        }).then((id) => {
+        }).then(({id}) => {
             actualizar.commit()
+            getDocs (query(datosCompra,where(documentId(), "==", id))).then(response => {
+                response.docs.forEach(doc=>{
+                    const dataDoc = doc.data()
+                    nombreComprador = dataDoc.comprador.nombre
+                    email = dataDoc.comprador.email
+                    total = dataDoc.total
+                    setMensaje("gracias "  + nombreComprador + " la id de su compra es " + id + " por tu compra por un valor de " + total + ", enviamos toda la información a tu email " + email)
+                })
+            })
             vaciarCarrito()
         }).catch(error=>console.log(error))
     }
@@ -73,7 +91,7 @@ const Carrito = () => {
             {precioFinal === 0? 
                 <div>
                     <p>
-                        no hay productos en el carrito :c
+                    {mensaje}    
                     </p>
                     <Link to = '/'>
                         ir a la tienda
