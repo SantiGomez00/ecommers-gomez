@@ -1,0 +1,29 @@
+#navBar{
+    display: grid;
+    grid-template-columns: 0.4fr 2fr 0.4fr;
+    grid-template-rows: 0.1fr;
+    background-color: rgb(77, 85, 112);
+}
+#botones{
+    font-size: 22px;
+    display: flex;
+    width: 250px;
+    margin-top: 5px;
+    justify-content: space-around;
+}
+.boton{
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+}
+.boton:hover{
+    transition: 0.5s;
+    font-size: 25px;
+}
+.active{
+    transition: 0.5s;
+    font-size: 25px;
+    color: red;
+    cursor: none;
+    pointer-events: none;
+}

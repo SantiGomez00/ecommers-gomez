@@ -1,0 +1,12 @@
+#cartWidget{
+    width: 60px;
+    height: auto;
+}
+#logo #nombre{
+    text-decoration: none;
+    color: black;
+    font-size: 70px;
+}
+#logo #nombre:hover{
+    color: rgb(50, 64, 110);
+}

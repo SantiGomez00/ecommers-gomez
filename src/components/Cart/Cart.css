@@ -1,0 +1,62 @@
+.grillaCarrito{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    align-items: center;
+}
+.precioTotal{
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+    color: red;
+}
+.carritoVacio{
+    font-size: 40px;
+    color: red;
+    text-align: center;
+}
+.clickCarritoVacio{
+    color: rgb(50, 64, 110);
+    text-decoration: none;
+}
+.clickCarritoVacio:hover{
+    transition: .4s;
+    font-size: 45px;
+    color: white;
+}
+.clear{
+    position: fixed;
+}
+.buttonCart{
+    left: 10px;
+    top: 600px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+}
+.buttonCart:hover{
+    color: red;
+    transition: 0.3s;
+}
+.buttonOrden{
+    left: 1160px;
+    top: 580px;
+    position:fixed;
+    cursor: pointer;
+    transition: 0.5s;
+    color: white;
+    font-size: 40px;
+}
+.buttonOrden:hover{
+    color: white;
+    transition: 0.5s;
+}

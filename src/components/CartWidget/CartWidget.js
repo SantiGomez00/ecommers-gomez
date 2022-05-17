@@ -1,5 +1,5 @@
-import "./NavBar.css"
-import CartContext from "./cartContext"
+import "./CartWidget.css"
+import CartContext from "../CartContext/CartContext"
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 
@@ -10,11 +10,11 @@ const LogoCarrito = () => {
 
     return (
         
-        <div>
+        <div id="cart">
             {mostrarCarrito !== 0? 
                 <Link to ='./cart'>
-                <img id = "carritoCompra" src = {require("./carritoCompra.png")}></img>
-                <div id = "cantidad">{cantidadCarrito()}</div>
+                <img id = "carritoCompra" alt = "carrito" src = {require("./CartWidget.png")}></img>
+                {cantidadCarrito()}
                 </Link> : <div></div>
             }
         </div>   

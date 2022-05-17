@@ -1,11 +1,9 @@
 import {useState,useEffect} from "react";
-
-import "./NavBar.css"
+import "./ItemCount.css"
 
 const Contador = ({initial,stock,add}) =>{
     const [count,setCount] = useState (initial)
     useEffect (() =>{
-        console.log("funciona")
     },[])
     const sumar = () => {
         if ( count >= stock ) {
@@ -25,14 +23,15 @@ const Contador = ({initial,stock,add}) =>{
     }
     return (
         <div>
-            <div id="counter">
-                <button id="botonMenos" onClick={restar}> - </button>
+            <div id="contenedorCounter">
+                <button onClick={restar}> - </button>
                 <p id="cantidad">{count}</p>
-                <button id="botonMas" onClick={sumar}> + </button> 
-                <div>stock = {stock}</div>
+                <button onClick={sumar}> + </button> 
             </div>
-            <button id="addCarrito" onClick={()=>add(count)}>agregar al carrito</button>
-            
+            <div className="agregarCarrito">
+                <button id="addCarrito" onClick={()=>add(count)}>agregar al carrito</button>
+            </div>
+            <div className="stock">stock = {stock}</div>
         </div>
     )
 }
