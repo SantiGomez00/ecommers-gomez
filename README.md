@@ -87,14 +87,14 @@ Para adquirir y hacer uso del mismo deberas:
 
 # Función
 
-Esta app inicia por el index *./* en el cual se muestran los productos del *ItemListContainer*, en el se encuentran todos los productos desordenados, pudes ordenarlos
+Esta app inicia por el index *./* en el cual se muestran los productos del *ItemListContainer*, en el se encuentran todos los productos desordenados, puedes ordenarlos
 por clases que estan situadas en el *NavBar*. Seleccionando una de ellas, la base de datos *FireBase* filtra segun la categoria cada producto.
 
 Cuando ya tienes un producto y quieres saber mas de el, puedes tocar el boton de "info", el cual ejecuta *ItemDetailContainer* donde se vera la informacion de dicho producto, la informacion se vera gracias a *itemDetail* (nombre, foto, descripcion, precio, stock). En este tambien se encuentra el *Counter* que te permite seleccionar la cantidad del producto que deseas adquirir y por ultimo "añadir al Carrito", que envia el producto con la cantidad seleccionada a *Cart*.
 
 Una vez que hay uno o mas productos el *Cart* se hace visible en el *NavBar* siendo posible el ingreso. En el *cart* encontraras los productos que seleccionaste previamente con la cantidad y el precio final, podras eliminar los productos de forma individual como tambien podras vaciar el carrito con el boton "vaciar carrito", por ultimo se encuentra el boton comprar que te permite generar la orden de compra pero no sin antes estar logueado en la app, que se hace mediante el *login* ubicado en el *NavBar*.
 
-En el *login* podas ingresar con un usuario ya creado o mismo registrarte con el boton "registrarse" el cual te pedira una serie de datos para crear tu usuario. Una vez logueado podras finalmente generar la orden de compra de forma correcta. Muchas gracias.
+En el *login* podras ingresar con un usuario ya creado o registrarte con el boton "registrarse" el cual te pedira una serie de datos para crear tu usuario. Una vez logueado podras finalmente generar la orden de compra de forma correcta. Muchas gracias.
 
 # Asi se vera
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/98488124/168925163-2d4e1441-1370-4a5b-aaaf-b85832c65f0f.gif)
