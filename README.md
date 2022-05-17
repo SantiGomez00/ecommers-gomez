@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+ # Mi primer projecto en REACT.JS "E-commer" 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projecto fue realizado para el curso de REACT.JS. Es un "e-commer" con el fin de simular una tienda "real", por la cual puedes navegar entre categorias,
+sumar productos al carrito y realizar una compra pero sin antes estar registrado/logueado, simula hasta el punto de generar la compra. 
 
-## Available Scripts
+**Gómez Santiago**
 
-In the project directory, you can run:
+ # Acceder al Codigo (.ZIP)
 
-### `npm start`
+Para adquirir y hacer uso del mismo deberas:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Ir a code => Download ZIP
+2. Descomprimir el archivo en una carpeta
+3. Ejecutar en terminal:
+4. npm install
+5. npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Lenguajes
 
-### `npm test`
+- **HTML
+- **CSS
+- **JavaScript
+- **React.JS
+- 
+# Utilidades
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. *react-router-dom*
+2. *react-firebase*
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Funciones en *CartContext
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- *setearLogin* => Asegura el correcto ingreso del usuario y le permite generar la compra.
+- *chequearLogin* => Chequea si a la hora de generar la compra, hay un usuario logueado.
+- *chequearDatos* => Chequea los datos del usuario logueado.
+- *sumarItem* => Te permite agregar un producto que ya esta en el carrito.
+- *checkStock* => Chequea cuanto stock queda del producto, descontando lo que tengas en el carrito.
+- *addItem* => Te permite agregar un producto nuevo al carrito.
+- *eliminarItem* => Elimina el producto del carrito.
+- *cantidadCarrito* => Muestra la cantidad de productos que hay en el carrito.
+- *consultarCarrito* => Da la informacion de si un producto esta o no en el carrito.
+- *vaciarCarrito* => Elimina todos los productos del carrito.
+- *precioFinal* => Da el valor final de los productos del carrito.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Firebase/Firestore
 
-### `npm run eject`
+## Colecciones ya creadas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **categorias**
+-  *categorias : string
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **productos**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- categoria: string,
+- detalle: string,
+- img: string,
+- nombre: string,
+- precio: number,
+- stock: number
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## colecciones creadas por el usuario
 
-## Learn More
+### **orders**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- *comprador:{*
+  - *email: string,*
+  - *nombre: string,*
+  - *telefono: string,*
+- *},*
+- *date: date,*
+- *item:{*
+  - *id: string,*
+  - *img: string,*
+  - *nombre: string,*
+  - *precio: number,*
+  - *quantity: number,*
+- *},*
+- *total:number*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **users**
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- mail: string,
+- nombre: string,
+- password: string,
+- phone: string
+  
