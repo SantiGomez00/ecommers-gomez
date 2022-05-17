@@ -15,17 +15,18 @@ Para adquirir y hacer uso del mismo deberas:
 4. npm install
 5. npm start
 
-# Utilidades
-
-1. *react-router-dom*
-2. *react-firebase*
-
 # Lenguajes
 
 - **HTML
 - **CSS
 - **JavaScript
 - **React.JS
+- 
+# Utilidades
+
+1. *react-router-dom*
+2. *react-firebase*
+
 
 # Funciones en *CartContext
 
